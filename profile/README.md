@@ -1,54 +1,79 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/cmdOS-App/cmdOS/main/src/shared-components/assets/cmdOS_logo.png" alt="SuperCommands logo" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/cmdOS-App/cmdOS/main/src/shared-components/assets/cmdOS_logo.png" alt="supercommands" width="80" height="80" />
 
-# SuperCommands
+# supercommands
 
-**A keyboard-first workspace for the browser.**
 
-Find and create notes, links, tasks, and other saved content; run browser actions from a command bar.
+**A keyboard-first command terminal for the browser.**
+
+Access search, browser commands, and web shortcuts — all from one command bar.
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D22.12.0-brightgreen)](https://nodejs.org)
 [![pnpm](https://img.shields.io/badge/pnpm-9.15.1-orange)](https://pnpm.io)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-[**Getting Started**](#getting-started) · [**Features**](#features) · [**Contributing**](#contributing) · [**Wiki**](https://github.com/supercommands/supercommands/wiki) · [**Community**](https://github.com/supercommands/supercommands/community) · [**Security**](SECURITY.md) · [**Code of Conduct**](CODE_OF_CONDUCT.md) · [**License**](#license)
+[**Getting Started**](#getting-started) · [**Features**](#features) · [**Contributing**](#contributing) · [**Wiki**](https://github.com/supercommands-app/supercommands/wiki) · [**Community**](https://github.com/supercommands-app/supercommands/community) · [**Security**](https://github.com/supercommands-app/supercommands/security) · [**Code of Conduct**](CODE_OF_CONDUCT.md) · [**License**](#license)
 
 </div>
 
-## What is SuperCommands?
 
-SuperCommands is a Chrome Manifest V3 extension with a new-tab workspace and a keyboard-driven website command interface. The standard Chrome build opens Command Search with `Alt + S`; the legacy website interface uses `Alt + Shift + S` in builds that include it. Browser-assigned shortcuts can be checked at `chrome://extensions/shortcuts`.
+---
 
-Core records are stored locally using IndexedDB and Chrome extension storage. Optional connected features, including authentication and cloud backup, can exchange data with external services when used.
+## What is supercommands?
+
+supercommands is a Chrome extension that replaces repetitive browser actions with keyboard commands. Instead of navigating menus, bookmarks, and tabs manually, you open supercommands with `Alt + S` and run commands from one place.
+
+It is entirely **local-first** — your data stays on your machine. No account required to use the core features.
+
+---
 
 ## Features
 
-- Search and manage notes, links, todos, snippets, collections, and other workspace records.
-- Open the website command interface and use `c <category>` to create, `c -s <category>` to save, or `c -f <category>` to filter. The longer `-save` and `-filter` forms are also supported.
-- Use slash filters such as `/note`, `/link`, `/todo`, `/snippet`, and `/collection` to narrow search.
-- Run browser actions including screenshots, page extraction, and exports where available.
-- Customize the new-tab dashboard with workspaces, views, widgets, and appearance settings.
+### ⌨️ Command Palette
 
-The available actions depend on the active surface and build variant. See the [project map](code%20structure/structure/project-map.md) and the [website popup V2 guide](src/pages/AltS_search_websites_v2/README.md) for implementation details.
+Open supercommands with `Alt + S` from any page and run commands instantly.
 
-## Tech stack
+```
+/notes           → Open your notes
+/link            → Create or open a saved link
+/screenshot      → Capture the current page
+/shortcuts       → Manage keyboard shortcuts
+```
+
+
+```
+
+### 🛠️ Browser Commands
+
+Built-in commands available from the command bar:
+
+- Visible-page and full-page screenshots
+- Image download from current page
+- Table extraction and CSV export
+- Print-friendly PDF generation
+
+---
+
+## Tech Stack
 
 | Layer | Technology |
-| --- | --- |
+|---|---|
 | UI | React 19, TypeScript |
-| Extension build | WXT, Vite 6; Turborepo also supports workspace and legacy scripts |
-| Styling | Tailwind CSS and existing theme tokens |
+| Build | WXT, Vite 6, Turborepo |
+| Styling | Tailwind CSS |
 | Package manager | pnpm workspaces |
-| Local data | Dexie.js (IndexedDB) and Chrome extension storage |
+| Local Database | Dexie.js (IndexedDB) — all data stored locally on device |
+| Storage | Chrome Extension APIs (local-first) |
 | Extension | Manifest V3 |
 
+---
 
 ## Repository Structure
 
 <pre>
-cmdOS/
+supercommands/
 ├── background/                  # Service worker, manifest, extension bootstrap
 ├── packages/                    # Shared internal packages (monorepo)
 │   ├── ui/                      # Design system components
@@ -104,8 +129,8 @@ cmdOS/
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/cmdOS-App/cmdOS.git
-cd cmdOS
+git clone https://github.com/supercommands-App/supercommands.git
+cd supercommands
 ```
 
 **2. Install dependencies**
@@ -185,4 +210,4 @@ We welcome contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) and our
 
 ## License
 
-Copyright © 2024–2026 SuperCommands · [Apache License 2.0](LICENSE)
+Copyright © 2024–2026 RPA TASKLABS AUTOMATION SOFTWARE PRIVATE LIMITED · [Apache License 2.0](LICENSE)
