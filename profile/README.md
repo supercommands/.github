@@ -1,74 +1,49 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/cmdOS-App/cmdOS/main/src/shared-components/assets/cmdOS_logo.png" alt="cmdOS" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/cmdOS-App/cmdOS/main/src/shared-components/assets/cmdOS_logo.png" alt="SuperCommands logo" width="80" height="80" />
 
-# cmdOS
+# SuperCommands
 
+**A keyboard-first workspace for the browser.**
 
-**A keyboard-first command terminal for the browser.**
-
-Access search, browser commands, and web shortcuts — all from one command bar.
+Find and create notes, links, tasks, and other saved content; run browser actions from a command bar.
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D22.12.0-brightgreen)](https://nodejs.org)
 [![pnpm](https://img.shields.io/badge/pnpm-9.15.1-orange)](https://pnpm.io)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-[**Getting Started**](#getting-started) · [**Features**](#features) · [**Contributing**](#contributing) · [**Wiki**](https://github.com/cmdOS-app/cmdOS/wiki) · [**Community**](https://github.c[...] 
+[**Getting Started**](#getting-started) · [**Features**](#features) · [**Contributing**](#contributing) · [**Wiki**](https://github.com/supercommands/supercommands/wiki) · [**Community**](https://github.com/supercommands/supercommands/community) · [**Security**](SECURITY.md) · [**Code of Conduct**](CODE_OF_CONDUCT.md) · [**License**](#license)
 
 </div>
 
+## What is SuperCommands?
 
----
+SuperCommands is a Chrome Manifest V3 extension with a new-tab workspace and a keyboard-driven website command interface. The standard Chrome build opens Command Search with `Alt + S`; the legacy website interface uses `Alt + Shift + S` in builds that include it. Browser-assigned shortcuts can be checked at `chrome://extensions/shortcuts`.
 
-## What is cmdOS?
-
-cmdOS is a Chrome extension that replaces repetitive browser actions with keyboard commands. Instead of navigating menus, bookmarks, and tabs manually, you open cmdOS with `Alt + S` and run comman[...]
-
-It is entirely **local-first** — your data stays on your machine. No account required to use the core features.
-
----
+Core records are stored locally using IndexedDB and Chrome extension storage. Optional connected features, including authentication and cloud backup, can exchange data with external services when used.
 
 ## Features
 
-### ⌨️ Command Palette
+- Search and manage notes, links, todos, snippets, collections, and other workspace records.
+- Open the website command interface and use `c <category>` to create, `c -s <category>` to save, or `c -f <category>` to filter. The longer `-save` and `-filter` forms are also supported.
+- Use slash filters such as `/note`, `/link`, `/todo`, `/snippet`, and `/collection` to narrow search.
+- Run browser actions including screenshots, page extraction, and exports where available.
+- Customize the new-tab dashboard with workspaces, views, widgets, and appearance settings.
 
-Open cmdOS with `Alt + S` from any page and run commands instantly.
+The available actions depend on the active surface and build variant. See the [project map](code%20structure/structure/project-map.md) and the [website popup V2 guide](src/pages/AltS_search_websites_v2/README.md) for implementation details.
 
-```
-/notes           → Open your notes
-/link            → Create or open a saved link
-/screenshot      → Capture the current page
-/shortcuts       → Manage keyboard shortcuts
-```
-
-
-```
-
-### 🛠️ Browser Commands
-
-Built-in commands available from the command bar:
-
-- Visible-page and full-page screenshots
-- Image download from current page
-- Table extraction and CSV export
-- Print-friendly PDF generation
-
----
-
-## Tech Stack
+## Tech stack
 
 | Layer | Technology |
-|---|---|
+| --- | --- |
 | UI | React 19, TypeScript |
-| Build | WXT, Vite 6, Turborepo |
-| Styling | Tailwind CSS |
+| Extension build | WXT, Vite 6; Turborepo also supports workspace and legacy scripts |
+| Styling | Tailwind CSS and existing theme tokens |
 | Package manager | pnpm workspaces |
-| Local Database | Dexie.js (IndexedDB) — all data stored locally on device |
-| Storage | Chrome Extension APIs (local-first) |
+| Local data | Dexie.js (IndexedDB) and Chrome extension storage |
 | Extension | Manifest V3 |
 
----
 
 ## Repository Structure
 
@@ -155,10 +130,10 @@ Then load the extension in Chrome:
 
 1. Open `chrome://extensions/`
 2. Enable **Developer mode** (top right toggle)
-3. Click **Load unpacked`
+3. Click **Load unpacked**
 4. Select the `.output/chrome-mv3/` directory
 
-WXT watches your files and automatically reloads the extension when you save changes. All your notes, snippets, and data are stored locally in **Dexie.js (IndexedDB)** — nothing leaves your dev[...]
+WXT watches your files and automatically reloads the extension when you save changes. All your notes, snippets, and data are stored locally in **Dexie.js (IndexedDB)** — nothing leaves your device.
 
 ---
 
@@ -173,11 +148,11 @@ pnpm run wxt:build:chrome:oss
 The built extension will be in `.output/chrome-mv3/`. Load it in Chrome:
 
 1. Open `chrome://extensions/`
-2. Enable **Developer mode`
-3. Click **Load unpacked`
+2. Enable **Developer mode**
+3. Click **Load unpacked**
 4. Select `.output/chrome-mv3/`
 
-> The `wxt:build:chrome:oss` command automatically sets the correct build variant, loads the OSS environment file, and locks the shared extension ID so Google OAuth redirect URIs match for all co[...]
+> The `wxt:build:chrome:oss` command automatically sets the correct build variant, loads the OSS environment file, and locks the shared extension ID so Google OAuth redirect URIs match for all contributors.
 
 To create a `.zip` ready for the Chrome Web Store:
 
@@ -210,4 +185,4 @@ We welcome contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) and our
 
 ## License
 
-Copyright © 2024–2026 RPA TASKLABS AUTOMATION SOFTWARE PRIVATE LIMITED · [Apache License 2.0](LICENSE)
+Copyright © 2024–2026 SuperCommands · [Apache License 2.0](LICENSE)
