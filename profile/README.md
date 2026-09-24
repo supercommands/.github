@@ -14,7 +14,7 @@ Access search, browser commands, and web shortcuts — all from one command bar.
 [![pnpm](https://img.shields.io/badge/pnpm-9.15.1-orange)](https://pnpm.io)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-[**Getting Started**](#getting-started) · [**Features**](#features) · [**Contributing**](#contributing) · [**Wiki**](https://github.com/supercommands-app/supercommands/wiki) · [**Community**](https://github.com/supercommands-app/supercommands/community) · [**Security**](https://github.com/supercommands-app/supercommands/security) · [**Code of Conduct**](CODE_OF_CONDUCT.md) · [**License**](#license)
+
 
 </div>
 
