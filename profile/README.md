@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="src/shared-components/assets/supercommands_logo.png" alt="SuperCommands logo" width="80" height="80" />
+<img src="https://github.com/supercommands/supercommands/blob/main/src/shared-components/assets/supercommands_logo.png" alt="SuperCommands logo" width="80" height="80" />
 
 # SuperCommands
 
