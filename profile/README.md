@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/cmdOS-App/cmdOS/main/src/shared-components/assets/cmdOS_logo.png" alt="supercommands" width="80" height="80" />
+<img src="https://github.com/supercommands/supercommands/blob/main/src/shared-components/assets/supercommands_logo.png" alt="supercommands" width="80" height="80" />
 
 # supercommands
 
